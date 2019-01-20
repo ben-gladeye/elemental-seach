@@ -93,7 +93,7 @@ class SearchDocument extends DataObject
             if (!$x_path) {
                 $x_path = self::config()->get('search_x_path');
             }
-            if ($x_path) {
+            if ($x_path && !$hasElemental) {
                 $domDoc = new \DOMDocument();
                 @$domDoc->loadHTML($html);
 

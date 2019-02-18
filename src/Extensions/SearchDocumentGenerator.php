@@ -109,6 +109,9 @@ class SearchDocumentGenerator extends DataExtension implements TemplateGlobalPro
                 'OriginID' => $object->ID
             ]);
             $doc->write();
+        } else if($doc->Type !== get_class($object)) {
+            $doc->Type = get_class($object);
+            $doc->write();
         }
         return $doc;
     }
@@ -116,7 +119,6 @@ class SearchDocumentGenerator extends DataExtension implements TemplateGlobalPro
     public static function find_document(DataObject $object)
     {
         $doc = SearchDocument::get()->filter([
-            'Type' => get_class($object),
             'OriginID' => $object->ID
         ])->first();
         return $doc;

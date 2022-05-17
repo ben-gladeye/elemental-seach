@@ -13,7 +13,7 @@
 	"prefer-stable": true,
     "require": {
 		"dnadesign/silverstripe-elemental": "*",
-        "guzzlehttp/guzzle": "6.3.3"
+        "guzzlehttp/guzzle": "^7"
     },
     "autoload": {
         "psr-4": {
